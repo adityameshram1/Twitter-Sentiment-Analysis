@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.0.0-rc.0",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.0.0",
+    "fusioncharts": "^3.13.5-sr.1",
+    "google-map-react": "^1.1.4",
     "react": "^16.8.6",
+    "react-d3-speedometer": "^0.5.5",
     "react-dom": "^16.8.6",
+    "react-fusioncharts": "^3.0.1",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1"
   },
   "scripts": {
