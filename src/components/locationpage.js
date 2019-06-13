@@ -1,65 +1,100 @@
-import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import GoogleMapReact from 'google-map-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const AnyReactComponent = ({ text }) => (
-  <div>
-    <img src={require('../assets/images/mapMarker.png')}  width = "50px" height="50px" alt="Twitter" contain/>
-  </div>
-);
+import React, { useState, useEffect } from "react";
+import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import * as parkDate from "../data/data.json";
+export default function LocationPage() {
+  const [viewport, setViewport] = useState({
+    latitude: 45.4211,
+    longitude: -75.6903,
+    width: "100vw",
+    height: "100vh",
+    zoom: 0,
+  });
+  const [selectedPark, setSelectedPark] = useState(null);
 
-class LocationPage extends Component {
-  static defaultProps = {
-    center: {
-      lat: 0.0,
-      lng: 0.0
-    },
-    zoom: 0.0,
-  };
- 
-  render() {
-    return (<div>
+  useEffect(() => {
+    const listener = e => {
+      if (e.key === "Escape") {
+        setSelectedPark(null);
+      }
+    };
+    window.addEventListener("keydown", listener);
+
+    return () => {
+      window.removeEventListener("keydown", listener);
+    };
+  }, []);
+
+  return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to={'/'} className="navbar-brand">Home</Link>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={'/resultpage'} className="nav-link">Sentiment Analysis</Link>
-            </li>
-            <li className="nav-item">
-              <Link to={'/locationpage'} className="nav-link">Location Analysis</Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div> 
-      
-      <div style={{ height: '230vh', width: '100%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyBEF2dyi_xSehDByWsTN4dNgkwMogGvW8g" }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            icon='https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+    <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link to={'/'} className="navbar-brand">Home</Link>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                  <Link to={'/resultpage'} className="nav-link">Sentiment Analysis</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={'/statisticspage'} className="nav-link">Statistics</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={'/locationpage'} className="nav-link">Location Analysis</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div> 
+      <ReactMapGL
+        {...viewport}
+        mapboxApiAccessToken={"pk.eyJ1IjoiYWRpdHlhbWVzaHJhbSIsImEiOiJjand1YzZscGwwNHk2M3ludzZxY3QzYWNlIn0.cm9yXEWO7pvKYxGciQZCnA"}
+        mapStyle="mapbox://styles/adityameshram/cjwuengep0i661cqhu2blqfav"
+        onViewportChange={viewport => {
+          setViewport(viewport);
+        }}
+      >
+        {parkDate.features.map(park => (
+          <Marker
+            key={park.properties.PARK_ID}
+            latitude={park.geometry.coordinates[1]}
+            longitude={park.geometry.coordinates[0]}
+          >
+            <button
+              className="marker-btn"
+              width="100px"
+              height= "100px"
+              // borderRadius="150 / 2"
+              // border="none"
+              // cursor="pointer"
+              radius= "50%"
+              onClick={e => {
+                e.preventDefault();
+                setSelectedPark(park);
+              }}
+            >
+              <img src={require('../assets/images/Mapmarker.png')} height="20px" width="20px" background="none" border= "none" cursor="pointer" alt="Skate Park Icon" />
+            </button>
+          </Marker>
+        ))}
 
-            text="My Marker"
-          />
-          <AnyReactComponent
-            lat={28.6139}
-            lng={77.2090}
-            text="My Marker"
-          />
-        </GoogleMapReact>
-      </div>
-     </div> 
-    );
-  }
+        {selectedPark ? (
+          <Popup
+            latitude={selectedPark.geometry.coordinates[1]}
+            longitude={selectedPark.geometry.coordinates[0]}
+            onClose={() => {
+              setSelectedPark(null);
+            }}
+          >
+            <div>
+              <h2>{selectedPark.properties.NAME}</h2>
+              <p>{selectedPark.properties.DESCRIPTIO}</p>
+            </div>
+          </Popup>
+        ) : null}
+      </ReactMapGL>
+    </div>
+  );
 }
-
-  export default LocationPage;

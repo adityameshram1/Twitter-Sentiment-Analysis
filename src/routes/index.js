@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import SearchPage from '../components/searchpage';
 import ResultPage from '../components/resultpage';
 import LocationPage from '../components/locationpage';
+import StatisticsPage from '../components/statisticspage';
 const  Main = () => (
     <main>
 
@@ -14,6 +15,10 @@ const  Main = () => (
             <Route
                 path='/resultpage'
                 component={ResultPage}
+            />
+            <Route
+                path='/statisticspage'
+                component={StatisticsPage}
             />
             <Route
                 path='/locationpage'

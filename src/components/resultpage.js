@@ -79,12 +79,15 @@ class ResultPage extends Component {
     render() {
       return (<div>
         <div>
-         <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand">Home</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
                   <Link to={'/resultpage'} className="nav-link">Sentiment Analysis</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to={'/statisticspage'} className="nav-link">Statistics</Link>
                 </li>
                 <li className="nav-item">
                   <Link to={'/locationpage'} className="nav-link">Location Analysis</Link>
@@ -93,58 +96,6 @@ class ResultPage extends Component {
             </div>
           </nav>
         </div> 
-
-        {/* <div class="container meter">
-          <div class="row">
-            <div class="col">
-            <div>
-         <ReactSpeedometer
-              value={888}
-              needleColor="black"
-              needleTransitionDuration={500}
-              needleTransition="easeLinear"
-              currentValueText="Total Positive Tweets: ${value}"
-              height={300}
-              width={500}
-          />
-
-        </div>
-            </div>
-            <div class="col">
-            <div>
-        <ReactSpeedometer
-            value={333}
-            needleColor="black"
-            needleTransitionDuration={500}
-            needleTransition="easeLinear"
-            currentValueText="Total Negative Tweets: ${value}"
-            height={300}
-            width={500}
-        />
-
-        </div>
-            </div>
-          </div>
-          
-          </div>
-
-          <div class="container bar-chart">
-          <div class="row">
-            <div class="col">
-              <div>
-                <ReactFC {...chartConfigs} />,
-              </div>
-            </div>
-            <div class="col">
-              <div>
-                <ReactFC {...chartConfigs2} />,
-              </div>
-            </div>
-          </div>
-          
-          </div> */} 
-
-
 <div class="container">
             <div class="row">
                 <div class="col">
