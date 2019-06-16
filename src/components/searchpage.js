@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link,Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/searchpage.css'
 import '../assets/images/t3.png';
@@ -39,6 +39,13 @@ import '../assets/images/t3.png';
   }
   }
   render() {
+
+
+
+    const redirectToIndex = this.state.redirectToIndex;
+        if (redirectToIndex === true) {
+            return <Redirect to="resultpage" />
+        }
          return (<div>
      
             <div className="formAlign">
@@ -64,9 +71,10 @@ import '../assets/images/t3.png';
                                   className="btn btn-primary" 
                                   onClick={this.onSubmit} 
                                   >
-                                                  <Link to="/resultpage">
+                                                  {/* <Link to="/resultpage">
                                                       <span style={{ color: "white" }}> Search </span>
-                                                  </Link>
+                                                  </Link> */}
+                                                  Search
                                   </button>):(false)}
                               </div>
                     </div>

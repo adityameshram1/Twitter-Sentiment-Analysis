@@ -5,6 +5,8 @@ import { Badge, Card, CardBody, CardFooter, CardHeader, Col, Row, Collapse, Fade
 import { AppSwitch } from '@coreui/react'
 import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2';
 // import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
+import ReactSpeedometer from "react-d3-speedometer"
+
 const pie = {
     labels: [
       'Likes',
@@ -70,36 +72,175 @@ render() {
         <div>
         <div className="animated fadeIn">
         <Row>
-        <Col xs="12" sm="6" md="4">
+        <Col xs="12" sm="6" md="3">
             <Card>
             <CardHeader>
-                Total number of tweets
+                <h6>Tweets (by user) </h6>
             </CardHeader>
             <CardBody>
-             <h1>3456</h1>
+            <ReactSpeedometer
+                    value={333}
+                    needleColor="black"
+                    needleTransitionDuration={500}
+                    needleTransition="easeLinear"
+                    currentValueText="Total Negative Tweets: ${value}"
+                    height={200}
+                    width={300}
+                    />  
             </CardBody>
             </Card>
         </Col>
-        <Col xs="12" sm="6" md="4">
+        <Col xs="12" sm="6" md="3">
             <Card>
             <CardHeader>
-                Total number of retweets
+              <h6>@mentions (of user)</h6>
             </CardHeader>
             <CardBody>
                <h1>23167</h1>
             </CardBody>
             </Card>
         </Col>
-        <Col xs="12" sm="6" md="4">
+        <Col xs="12" sm="6" md="3">
             <Card>
             <CardHeader>
-               Total likes received
+               <h6>Replies (to or from user)</h6>
             </CardHeader>
             <CardBody>
                 <h1>45435</h1>
             </CardBody>
             </Card>
         </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Retweets (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Likes (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Quote Tweets (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Follows (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Unfollows (by user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Blocks (by user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Unblocks (by user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Direct Messages sent (by user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Direct Messages received (by user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        {/* <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Retweets (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Retweets (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Retweets (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+        <Col xs="12" sm="6" md="3">
+            <Card>
+            <CardHeader>
+               <h6>Retweets (by user or of user)</h6>
+            </CardHeader>
+            <CardBody>
+                <h1>987</h1>
+            </CardBody>
+            </Card>
+        </Col>
+         */}
         {/*<Col xs="12" sm="6" md="4">
             <Card>
             <CardHeader>

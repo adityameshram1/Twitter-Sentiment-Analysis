@@ -114,13 +114,14 @@ class ResultPage extends Component {
                 <div class="col">      
                 
                     <ReactSpeedometer
-                    value={333}
+                    value={1230}
                     needleColor="black"
                     needleTransitionDuration={500}
                     needleTransition="easeLinear"
                     currentValueText="Total Negative Tweets: ${value}"
                     height={300}
                     width={500}
+                    maxValue={2000}
                     />  
                 
                 </div>
