@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6b23aef5.chunk.css",
+    "main.js": "/static/js/main.205edd24.chunk.js",
+    "main.js.map": "/static/js/main.205edd24.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.646ff1c4.chunk.css": "/static/css/2.646ff1c4.chunk.css",
+    "static/js/2.e23acfcd.chunk.js": "/static/js/2.e23acfcd.chunk.js",
+    "static/js/2.e23acfcd.chunk.js.map": "/static/js/2.e23acfcd.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.82bb20f95038da9334fc97741107e153.js": "/precache-manifest.82bb20f95038da9334fc97741107e153.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.646ff1c4.chunk.css.map": "/static/css/2.646ff1c4.chunk.css.map",
+    "static/css/main.6b23aef5.chunk.css.map": "/static/css/main.6b23aef5.chunk.css.map",
+    "static/media/Mapmarker.png": "/static/media/Mapmarker.2ac0f20e.png",
+    "static/media/t3.png": "/static/media/t3.438efa02.png",
+    "static/media/twave.jpg": "/static/media/twave.d80b960f.jpg"
+  }
+}
