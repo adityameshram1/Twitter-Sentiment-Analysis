@@ -72,9 +72,25 @@ class ResultPage extends Component {
 
   constructor(props) {
       super(props);
-      
+      this.state = {serverports: []};
     }
     
+    componentDidMount(){
+      axios.get('http://localhost:4000/serverport')
+      .then(response => {
+        this.setState({ serverports: response.data });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      
+    }
+
+    tabRow(){
+      return this.state.serverports.map(function(object, i){
+         ;
+      });
+  }
 
     render() {
       return (<div>
@@ -101,7 +117,7 @@ class ResultPage extends Component {
                 <div class="col">
 
                     <ReactSpeedometer
-                    value={888}
+                    value={this.state.no_positive_tweets}
                     needleColor="black"
                     needleTransitionDuration={500}
                     needleTransition="easeLinear"

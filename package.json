@@ -8,8 +8,15 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.0.0",
     "chart.js": "^2.8.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "fusioncharts": "^3.13.5-sr.1",
+    "gh-pages": "^2.0.1",
     "google-map-react": "^1.1.4",
+    "homepage": "https://adityameshram1.github.io/Twitter-Sentiment-Analysis",
+    "mongoose": "^5.6.1",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1",
     "react": "^16.8.6",
     "react-chartjs-2": "^2.7.6",
     "react-d3-speedometer": "^0.5.5",
@@ -26,7 +33,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

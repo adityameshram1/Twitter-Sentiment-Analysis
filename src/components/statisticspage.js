@@ -44,9 +44,20 @@ const pie = {
 
 export default class StatisticsPage extends Component {
 
-constructor(props) {
-    super(props);
-    }
+    constructor(props) {
+        super(props);
+        // this.state = {serverports: []};
+      }
+      
+    //   componentDidMount(){
+    //     axios.get('http://localhost:4000/serverport')
+    //     .then(response => {
+    //       this.setState({ serverports: response.data });
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     })
+    //   }
     
 
 render() {
@@ -78,15 +89,7 @@ render() {
                 <h6>Tweets (by user) </h6>
             </CardHeader>
             <CardBody>
-            <ReactSpeedometer
-                    value={333}
-                    needleColor="black"
-                    needleTransitionDuration={500}
-                    needleTransition="easeLinear"
-                    currentValueText="Total Negative Tweets: ${value}"
-                    height={200}
-                    width={300}
-                    />  
+            <h1>123787</h1>
             </CardBody>
             </Card>
         </Col>
@@ -325,3 +328,62 @@ render() {
     }
 }
 
+
+// import React, {Component} from 'react';
+// // import Modal from 'react-modal';
+// export default class StatisticsPage extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             tweetData: []
+//         }
+//     }
+
+//     componentDidMount() {
+//         let self = this;
+//         fetch('/twitter/tweets', {
+//             method: 'GET'
+//         }).then(function(response) {
+//             if (response.status !== 200) {
+//                 throw new Error("Bad response from server");
+//             }
+//             return response.json();
+//         }).then(function(data) {
+//             self.setState({tweetData: data});
+//         }).catch(err => {
+//         console.log('caught it!',err);
+//         })
+//     }
+
+//     render() {
+//         return (
+//         <div className="container"> 
+//             <div className="panel panel-default p50 uth-panel">
+//                 <table className="table table-hover">
+//                     <thead>
+//                         <tr>
+//                             <th>Tweet Id</th>
+//                             <th>Twitter Handle</th>
+//                             <th>Twitter account Name </th>
+//                             <th>Tweet Text</th>
+//                             {/* <th>Action</th> */}
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                     {this.state.tweetData.map(tweets =>
+//                         <tr key={tweets.tweetid}>
+//                         <td>{tweets.tweetid} </td>
+//                         <td>{tweets.tweetusername} </td>
+//                         <td>{tweets.tweetuserscreenname}</td>
+//                         <td>{tweets.tweettext}</td>
+//                         {/* <td>{tweets.phone_number}</td>npm  */}
+//                         {/* <td><a>Edit</a>|<a>Delete</a></td> */}
+//                         </tr>
+//                     )}
+//                     </tbody>
+//                 </table>
+//             </div>
+//         </div>
+//         );
+//     }
+// }
