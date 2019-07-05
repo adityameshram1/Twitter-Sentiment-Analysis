@@ -67,30 +67,24 @@ const chartConfigs2 = {
   dataFormat: 'json',
   dataSource: myDataSource2,
 };
-
 class ResultPage extends Component {
 
   constructor(props) {
       super(props);
       this.state = {serverports: []};
     }
-    
     componentDidMount(){
-      axios.get('http://localhost:4000/serverport')
+    debugger
+      axios.get('http://localhost:4000/serverports')
       .then(response => {
         this.setState({ serverports: response.data });
       })
       .catch(function (error) {
-        console.log(error);
-      })
+        console.log("Failed to fetch data!")
+      });
       
     }
-
-    tabRow(){
-      return this.state.serverports.map(function(object, i){
-         ;
-      });
-  }
+  
 
     render() {
       return (<div>
@@ -117,7 +111,7 @@ class ResultPage extends Component {
                 <div class="col">
 
                     <ReactSpeedometer
-                    value={this.state.no_positive_tweets}
+                    value={this.state.serverports.no_positive_tweets}
                     needleColor="black"
                     needleTransitionDuration={500}
                     needleTransition="easeLinear"
@@ -156,6 +150,6 @@ class ResultPage extends Component {
 
         );
     }
+  
   }
-
   export default ResultPage;
