@@ -71,9 +71,6 @@ import '../assets/images/t3.png';
                                   className="btn btn-primary" 
                                   onClick={this.onSubmit} 
                                   >
-                                                  {/* <Link to="/resultpage">
-                                                      <span style={{ color: "white" }}> Search </span>
-                                                  </Link> */}
                                                   Search
                                   </button>):(false)}
                               </div>

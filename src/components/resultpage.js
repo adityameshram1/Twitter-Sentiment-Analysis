@@ -111,7 +111,7 @@ class ResultPage extends Component {
                 <div class="col">
 
                     <ReactSpeedometer
-                    value={this.state.serverports.no_positive_tweets}
+                    value={this.state.no_positive_tweets}
                     needleColor="black"
                     needleTransitionDuration={500}
                     needleTransition="easeLinear"
